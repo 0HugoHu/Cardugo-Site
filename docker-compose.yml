@@ -1,0 +1,12 @@
+services:
+  cardugo-site:
+    build: .
+    image: cardugo-site:latest
+    container_name: cardugo-site
+    restart: unless-stopped
+    ports:
+      # Host:container. The Unraid Docker Controller overrides the host port
+      # with an allocated one (13001-13999); this default is for manual runs.
+      - "8080:80"
+    environment:
+      - TZ=UTC

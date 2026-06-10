@@ -1,0 +1,6 @@
+{
+  "name": "Cardugo Site",
+  "description": "Static marketing and privacy site for the Cardugo iOS app, served by nginx. 8 languages, no tracking.",
+  "defaultPort": 80,
+  "env": {}
+}

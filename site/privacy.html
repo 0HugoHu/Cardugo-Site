@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cardugo</title>
+  <meta name="description" content="Cardugo Privacy Policy. Cardugo requests no permissions beyond Face ID, has no network access, collects no data, and stores everything encrypted on your device." />
+  <link rel="canonical" href="https://cardugo.hugohu.site/privacy.html" />
+
+  <style>
+    :root {
+      --blue:    #006FCF;
+      --bg:      #0A0A12;
+      --surface: #12121E;
+      --border:  rgba(255,255,255,0.10);
+      --text:    #F0F0F6;
+      --muted:   rgba(240,240,246,0.55);
+      --radius:  16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 0 80px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,18,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 40%, #8BB8FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-back {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* ── Language switcher ── */
+    .lang-switch { position: relative; }
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 11px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.12); }
+    .lang-btn svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.8; }
+    .lang-btn .chev { width: 11px; height: 11px; transition: transform 0.2s; }
+    .lang-switch.open .lang-btn .chev { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 168px;
+      background: #161622;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 6px;
+      list-style: none;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.16s, transform 0.16s, visibility 0.16s;
+      z-index: 200;
+    }
+    .lang-switch.open .lang-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .lang-menu li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 12px;
+      font-size: 14px;
+      color: var(--muted);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+    }
+    .lang-menu li:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+    .lang-menu li[aria-selected="true"] { color: var(--text); font-weight: 600; }
+    .lang-menu li[aria-selected="true"]::after { content: "✓"; color: #60B0FF; font-size: 13px; }
+    .lang-menu li .lang-sub { font-size: 11px; color: rgba(240,240,246,0.4); font-weight: 500; }
+
+    @media (max-width: 560px) {
+      .lang-btn .lang-text { display: none; }
+      .lang-btn { padding: 7px 9px; }
+    }
+
+    /* ── Content ── */
+    .page-header {
+      background: linear-gradient(150deg, #0E1628 0%, #060820 50%, #0A0A12 100%);
+      padding: 72px 24px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .page-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #60B0FF;
+      margin-bottom: 14px;
+    }
+    .page-header h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 40%, #8BB8FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-header .effective {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 56px auto 0;
+      padding: 0 24px;
+    }
+
+    /* ── Summary box ── */
+    .summary-box {
+      background: rgba(0,255,128,0.05);
+      border: 1px solid rgba(0,255,128,0.18);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 48px;
+    }
+    .summary-box h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #4ADE80;
+    }
+    .summary-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .summary-box li {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .summary-box li::before {
+      content: "✓";
+      color: #4ADE80;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Policy sections ── */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+    .policy-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section strong { color: var(--text); }
+    .policy-section a { color: #60B0FF; text-decoration: none; }
+    .policy-section a:hover { text-decoration: underline; }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 0;
+    }
+    .data-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 600; }
+    .badge-local {
+      display: inline-block;
+      background: rgba(0,255,128,0.10);
+      color: #4ADE80;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      border: 1px solid rgba(0,255,128,0.2);
+    }
+    .badge-none {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 72px;
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Cardugo</a>
+    <div class="nav-right">
+      <!-- Language switcher -->
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/>
+          </svg>
+          <span class="lang-text" id="langLabel">English</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language"></ul>
+      </div>
+      <a class="nav-back" href="index.html"><span aria-hidden="true">&#8592;</span> <span data-i18n="nav.back">Back to main page</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-label" data-i18n="page.label">Legal</p>
+    <h1 data-i18n="page.title">Privacy Policy</h1>
+    <p class="effective" data-i18n="page.effective">Effective date: June 9, 2026 · Last updated: June 9, 2026</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ CONTENT ══════════════════════════════ -->
+<div class="content">
+
+  <!-- Summary -->
+  <div class="summary-box">
+    <h2 data-i18n="summary.h">The short version</h2>
+    <ul>
+      <li data-i18n="summary.1">Cardugo requests no permissions other than Face ID — and only if you turn it on.</li>
+      <li data-i18n="summary.2">It has no network access, so it never sends your data anywhere.</li>
+      <li data-i18n="summary.3">No analytics, no trackers, no crash reporting, no advertising SDKs.</li>
+      <li data-i18n="summary.4">Everything you enter stays on your device, encrypted with AES-256.</li>
+      <li data-i18n="summary.5">No accounts, no servers, no databases — nothing to breach.</li>
+    </ul>
+  </div>
+
+  <!-- 1. Who we are -->
+  <div class="policy-section">
+    <h2 data-i18n="s1.h">1. Who we are</h2>
+    <p data-i18n-html="s1.p">Cardugo is an iOS app from an independent developer. Questions about this policy? Email <a href="mailto:0@hugohu.top">0@hugohu.top</a>.</p>
+  </div>
+
+  <!-- 2. What Cardugo stores -->
+  <div class="policy-section">
+    <h2 data-i18n="s2.h">2. What Cardugo stores — and where</h2>
+    <p data-i18n="s2.p">Everything you enter is stored only on your device and is never transmitted anywhere.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th data-i18n="th.data">Data</th>
+          <th data-i18n="th.where">Where stored</th>
+          <th data-i18n="th.enc">Encrypted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="row1.data">Card number, CVV, expiry, cardholder name, PIN, notes, routing &amp; account numbers</td>
+          <td><span class="badge-local" data-i18n="badge.local">On device only</span></td>
+          <td data-i18n="row1.enc">Yes — AES-256-GCM</td>
+        </tr>
+        <tr>
+          <td data-i18n="row2.data">Nickname, bank name, last-four digits</td>
+          <td><span class="badge-local" data-i18n="badge.local">On device only</span></td>
+          <td data-i18n="row2.enc">No — used for list display</td>
+        </tr>
+        <tr>
+          <td data-i18n="row3.data">App settings (theme, language, toggles)</td>
+          <td><span class="badge-local" data-i18n="badge.local">On device only</span></td>
+          <td data-i18n="row3.enc">No — non-sensitive</td>
+        </tr>
+        <tr>
+          <td data-i18n="row4.data">Biometric key (if you enable Face ID)</td>
+          <td><span class="badge-local" data-i18n="badge.keychain">Keychain</span></td>
+          <td data-i18n="row4.enc">Yes — iOS Keychain</td>
+        </tr>
+        <tr>
+          <td data-i18n="row5.data">Analytics, usage data, crash reports</td>
+          <td><span class="badge-none" data-i18n="badge.notcollected">Not collected</span></td>
+          <td data-i18n="row5.enc">N/A</td>
+        </tr>
+        <tr>
+          <td data-i18n="row6.data">Camera, photos, contacts, location, microphone</td>
+          <td><span class="badge-none" data-i18n="badge.notaccessed">Not accessed</span></td>
+          <td data-i18n="row6.enc">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. No permissions, network, or trackers -->
+  <div class="policy-section">
+    <h2 data-i18n="s3.h">3. No permissions, no network, no trackers</h2>
+    <p data-i18n="s3.p1">The only permission Cardugo can request is Face ID, used solely to unlock your encrypted data on-device — and only if you enable it. It does not ask for the camera, photos, contacts, location, or microphone.</p>
+    <p data-i18n="s3.p2">Cardugo contains no networking code — no URLSession, no web views, no backend, no cloud sync. It cannot send your data anywhere. It also has zero third-party SDKs: no analytics, no crash reporters, no advertising networks. All card-network detection, validation, and bank-name suggestions run on-device from data bundled with the app.</p>
+  </div>
+
+  <!-- 4. How your data is protected -->
+  <div class="policy-section">
+    <h2 data-i18n="s4.h">4. How your data is protected</h2>
+    <p data-i18n="s4.p">Sensitive fields are encrypted with AES-256-GCM before being written to storage. The key is derived from your 6-digit PIN using PBKDF2-SHA256 (200,000 iterations). If you enable Face ID, a copy of the key is sealed in the iOS Keychain. If you forget your PIN, your data cannot be recovered — there is no reset path and no backdoor.</p>
+  </div>
+
+  <!-- 5. Backups you export -->
+  <div class="policy-section">
+    <h2 data-i18n="s5.h">5. Backups you export</h2>
+    <p data-i18n="s5.p">You can export a .cardugo backup file, AES-256 encrypted with a password you choose at export time. Cardugo never uploads backups automatically — export only happens when you trigger it, and you decide where the file is stored.</p>
+  </div>
+
+  <!-- 6. Apple, children, changes -->
+  <div class="policy-section">
+    <h2 data-i18n="s6.h">6. Apple, children &amp; changes</h2>
+    <p data-i18n-html="s6.p">When you download from the App Store, Apple may collect data as described in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>; that is handled by Apple, not by us. Cardugo is not directed at children and knowingly collects no data from anyone. If our practices ever change, we will update this page and the date above.</p>
+  </div>
+
+  <!-- 7. Contact -->
+  <div class="policy-section">
+    <h2 data-i18n="s7.h">7. Contact</h2>
+    <p data-i18n-html="s7.p">Questions? Reach us at <a href="mailto:0@hugohu.top">0@hugohu.top</a>.</p>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="footer.home">Home</a>
+    <a href="mailto:0@hugohu.top" data-i18n="footer.support">Support</a>
+    <a href="https://apps.apple.com/app/cardugo/id0000000000" data-i18n="footer.appstore">App Store</a>
+  </div>
+  <p data-i18n="footer.tagline">Cardugo — All data stays on your device.</p>
+  <p class="footer-copy" data-i18n="footer.copy">© 2026 Cardugo. All rights reserved.</p>
+</footer>
+
+<script>
+/* Page strings consumed by the shared engine in i18n.js */
+window.CARDUGO_I18N = {
+  en: {
+    "doc.title": `Privacy Policy — Cardugo`,
+    "nav.back": `Back to main page`,
+    "page.label": `Legal`, "page.title": `Privacy Policy`,
+    "page.effective": `Effective date: June 9, 2026 · Last updated: June 9, 2026`,
+    "summary.h": `The short version`,
+    "summary.1": `Cardugo requests no permissions other than Face ID — and only if you turn it on.`,
+    "summary.2": `It has no network access, so it never sends your data anywhere.`,
+    "summary.3": `No analytics, no trackers, no crash reporting, no advertising SDKs.`,
+    "summary.4": `Everything you enter stays on your device, encrypted with AES-256.`,
+    "summary.5": `No accounts, no servers, no databases — nothing to breach.`,
+    "s1.h": `1. Who we are`,
+    "s1.p": `Cardugo is an iOS app from an independent developer. Questions about this policy? Email <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "s2.h": `2. What Cardugo stores — and where`,
+    "s2.p": `Everything you enter is stored only on your device and is never transmitted anywhere.`,
+    "th.data": `Data`, "th.where": `Where stored`, "th.enc": `Encrypted`,
+    "row1.data": `Card number, CVV, expiry, cardholder name, PIN, notes, routing & account numbers`,
+    "row1.enc": `Yes — AES-256-GCM`,
+    "row2.data": `Nickname, bank name, last-four digits`,
+    "row2.enc": `No — used for list display`,
+    "row3.data": `App settings (theme, language, toggles)`,
+    "row3.enc": `No — non-sensitive`,
+    "row4.data": `Biometric key (if you enable Face ID)`,
+    "row4.enc": `Yes — iOS Keychain`,
+    "row5.data": `Analytics, usage data, crash reports`,
+    "row5.enc": `N/A`,
+    "row6.data": `Camera, photos, contacts, location, microphone`,
+    "row6.enc": `N/A`,
+    "badge.local": `On device only`, "badge.keychain": `Keychain`, "badge.notcollected": `Not collected`, "badge.notaccessed": `Not accessed`,
+    "s3.h": `3. No permissions, no network, no trackers`,
+    "s3.p1": `The only permission Cardugo can request is Face ID, used solely to unlock your encrypted data on-device — and only if you enable it. It does not ask for the camera, photos, contacts, location, or microphone.`,
+    "s3.p2": `Cardugo contains no networking code — no URLSession, no web views, no backend, no cloud sync. It cannot send your data anywhere. It also has zero third-party SDKs: no analytics, no crash reporters, no advertising networks. All card-network detection, validation, and bank-name suggestions run on-device from data bundled with the app.`,
+    "s4.h": `4. How your data is protected`,
+    "s4.p": `Sensitive fields are encrypted with AES-256-GCM before being written to storage. The key is derived from your 6-digit PIN using PBKDF2-SHA256 (200,000 iterations). If you enable Face ID, a copy of the key is sealed in the iOS Keychain. If you forget your PIN, your data cannot be recovered — there is no reset path and no backdoor.`,
+    "s5.h": `5. Backups you export`,
+    "s5.p": `You can export a .cardugo backup file, AES-256 encrypted with a password you choose at export time. Cardugo never uploads backups automatically — export only happens when you trigger it, and you decide where the file is stored.`,
+    "s6.h": `6. Apple, children & changes`,
+    "s6.p": `When you download from the App Store, Apple may collect data as described in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>; that is handled by Apple, not by us. Cardugo is not directed at children and knowingly collects no data from anyone. If our practices ever change, we will update this page and the date above.`,
+    "s7.h": `7. Contact`,
+    "s7.p": `Questions? Reach us at <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "footer.home": `Home`, "footer.support": `Support`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — All data stays on your device.`,
+    "footer.copy": `© 2026 Cardugo. All rights reserved.`,
+  },
+  es: {
+    "doc.title": `Política de privacidad — Cardugo`,
+    "nav.back": `Volver a la página principal`,
+    "page.label": `Legal`, "page.title": `Política de privacidad`,
+    "page.effective": `Fecha de entrada en vigor: 9 de junio de 2026 · Última actualización: 9 de junio de 2026`,
+    "summary.h": `En resumen`,
+    "summary.1": `Cardugo no solicita más permiso que Face ID, y solo si lo activas.`,
+    "summary.2": `No tiene acceso a la red, por lo que nunca envía tus datos a ningún sitio.`,
+    "summary.3": `Sin analíticas, sin rastreadores, sin informes de fallos, sin SDK de publicidad.`,
+    "summary.4": `Todo lo que introduces permanece en tu dispositivo, cifrado con AES-256.`,
+    "summary.5": `Sin cuentas, sin servidores, sin bases de datos: nada que vulnerar.`,
+    "s1.h": `1. Quiénes somos`,
+    "s1.p": `Cardugo es una app de iOS de un desarrollador independiente. ¿Preguntas sobre esta política? Escribe a <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "s2.h": `2. Qué guarda Cardugo y dónde`,
+    "s2.p": `Todo lo que introduces se guarda solo en tu dispositivo y nunca se transmite a ningún sitio.`,
+    "th.data": `Dato`, "th.where": `Dónde se guarda`, "th.enc": `Cifrado`,
+    "row1.data": `Número de tarjeta, CVV, caducidad, titular, PIN, notas, números de ruta y de cuenta`,
+    "row1.enc": `Sí — AES-256-GCM`,
+    "row2.data": `Apodo, nombre del banco, últimos cuatro dígitos`,
+    "row2.enc": `No — se usa para mostrar la lista`,
+    "row3.data": `Ajustes de la app (tema, idioma, opciones)`,
+    "row3.enc": `No — no es sensible`,
+    "row4.data": `Clave biométrica (si activas Face ID)`,
+    "row4.enc": `Sí — Keychain de iOS`,
+    "row5.data": `Analíticas, datos de uso, informes de fallos`,
+    "row5.enc": `N/D`,
+    "row6.data": `Cámara, fotos, contactos, ubicación, micrófono`,
+    "row6.enc": `N/D`,
+    "badge.local": `Solo en el dispositivo`, "badge.keychain": `Keychain`, "badge.notcollected": `No se recopila`, "badge.notaccessed": `Sin acceso`,
+    "s3.h": `3. Sin permisos, sin red, sin rastreadores`,
+    "s3.p1": `El único permiso que Cardugo puede solicitar es Face ID, usado únicamente para desbloquear tus datos cifrados en el dispositivo, y solo si lo activas. No pide cámara, fotos, contactos, ubicación ni micrófono.`,
+    "s3.p2": `Cardugo no contiene código de red: sin URLSession, sin vistas web, sin servidor, sin sincronización en la nube. No puede enviar tus datos a ningún sitio. Tampoco tiene SDK de terceros: sin analíticas, sin informes de fallos, sin redes publicitarias. Toda la detección de red, validación y sugerencia de bancos se ejecuta en el dispositivo con datos incluidos en la app.`,
+    "s4.h": `4. Cómo se protegen tus datos`,
+    "s4.p": `Los campos sensibles se cifran con AES-256-GCM antes de guardarse. La clave se deriva de tu PIN de 6 dígitos mediante PBKDF2-SHA256 (200 000 iteraciones). Si activas Face ID, una copia de la clave se sella en el Keychain de iOS. Si olvidas tu PIN, tus datos no se pueden recuperar: no hay forma de restablecerlos ni puerta trasera.`,
+    "s5.h": `5. Copias que exportas`,
+    "s5.p": `Puedes exportar un archivo de copia .cardugo, cifrado con AES-256 mediante una contraseña que eliges al exportar. Cardugo nunca sube copias automáticamente: la exportación solo ocurre cuando tú la activas, y tú decides dónde se guarda el archivo.`,
+    "s6.h": `6. Apple, menores y cambios`,
+    "s6.p": `Cuando descargas desde el App Store, Apple puede recopilar datos según se describe en la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de privacidad de Apple</a>; eso lo gestiona Apple, no nosotros. Cardugo no está dirigida a menores y no recopila datos a sabiendas de nadie. Si nuestras prácticas cambian, actualizaremos esta página y la fecha de arriba.`,
+    "s7.h": `7. Contacto`,
+    "s7.p": `¿Preguntas? Escríbenos a <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "footer.home": `Inicio`, "footer.support": `Soporte`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — Todos los datos permanecen en tu dispositivo.`,
+    "footer.copy": `© 2026 Cardugo. Todos los derechos reservados.`,
+  },
+  fr: {
+    "doc.title": `Politique de confidentialité — Cardugo`,
+    "nav.back": `Retour à la page principale`,
+    "page.label": `Mentions légales`, "page.title": `Politique de confidentialité`,
+    "page.effective": `Date d'entrée en vigueur : 9 juin 2026 · Dernière mise à jour : 9 juin 2026`,
+    "summary.h": `En bref`,
+    "summary.1": `Cardugo ne demande aucune autorisation hormis Face ID, et seulement si vous l'activez.`,
+    "summary.2": `Il n'a aucun accès réseau : il n'envoie donc jamais vos données nulle part.`,
+    "summary.3": `Aucune analyse, aucun traceur, aucun rapport de plantage, aucun SDK publicitaire.`,
+    "summary.4": `Tout ce que vous saisissez reste sur votre appareil, chiffré en AES-256.`,
+    "summary.5": `Aucun compte, aucun serveur, aucune base de données — rien à compromettre.`,
+    "s1.h": `1. Qui nous sommes`,
+    "s1.p": `Cardugo est une app iOS d'un développeur indépendant. Des questions sur cette politique ? Écrivez à <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "s2.h": `2. Ce que Cardugo stocke — et où`,
+    "s2.p": `Tout ce que vous saisissez est stocké uniquement sur votre appareil et n'est jamais transmis nulle part.`,
+    "th.data": `Donnée`, "th.where": `Lieu de stockage`, "th.enc": `Chiffré`,
+    "row1.data": `Numéro de carte, CVV, expiration, titulaire, code, notes, numéros d'acheminement et de compte`,
+    "row1.enc": `Oui — AES-256-GCM`,
+    "row2.data": `Surnom, nom de la banque, quatre derniers chiffres`,
+    "row2.enc": `Non — utilisé pour l'affichage de la liste`,
+    "row3.data": `Réglages de l'app (thème, langue, options)`,
+    "row3.enc": `Non — non sensible`,
+    "row4.data": `Clé biométrique (si vous activez Face ID)`,
+    "row4.enc": `Oui — Keychain iOS`,
+    "row5.data": `Analyses, données d'usage, rapports de plantage`,
+    "row5.enc": `S.O.`,
+    "row6.data": `Appareil photo, photos, contacts, localisation, micro`,
+    "row6.enc": `S.O.`,
+    "badge.local": `Sur l'appareil uniquement`, "badge.keychain": `Keychain`, "badge.notcollected": `Non collecté`, "badge.notaccessed": `Non accédé`,
+    "s3.h": `3. Aucune autorisation, aucun réseau, aucun traceur`,
+    "s3.p1": `La seule autorisation que Cardugo peut demander est Face ID, utilisée uniquement pour déverrouiller vos données chiffrées sur l'appareil, et seulement si vous l'activez. Il ne demande ni appareil photo, ni photos, ni contacts, ni localisation, ni micro.`,
+    "s3.p2": `Cardugo ne contient aucun code réseau : pas d'URLSession, pas de vues web, pas de serveur, pas de synchronisation cloud. Il ne peut envoyer vos données nulle part. Il n'a aucun SDK tiers : pas d'analyses, pas de rapports de plantage, pas de régies publicitaires. Toute la détection de réseau, la validation et les suggestions de banques s'exécutent sur l'appareil à partir de données intégrées à l'app.`,
+    "s4.h": `4. Comment vos données sont protégées`,
+    "s4.p": `Les champs sensibles sont chiffrés en AES-256-GCM avant d'être enregistrés. La clé est dérivée de votre code à 6 chiffres via PBKDF2-SHA256 (200 000 itérations). Si vous activez Face ID, une copie de la clé est scellée dans le Keychain iOS. Si vous oubliez votre code, vos données sont irrécupérables : aucun moyen de réinitialisation, aucune porte dérobée.`,
+    "s5.h": `5. Sauvegardes que vous exportez`,
+    "s5.p": `Vous pouvez exporter un fichier de sauvegarde .cardugo, chiffré en AES-256 avec un mot de passe que vous choisissez à l'export. Cardugo n'envoie jamais de sauvegardes automatiquement : l'export n'a lieu que lorsque vous le déclenchez, et vous décidez où le fichier est stocké.`,
+    "s6.h": `6. Apple, enfants et modifications`,
+    "s6.p": `Lorsque vous téléchargez depuis l'App Store, Apple peut collecter des données comme décrit dans la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">politique de confidentialité d'Apple</a> ; cela relève d'Apple, pas de nous. Cardugo ne s'adresse pas aux enfants et ne collecte sciemment aucune donnée de personne. Si nos pratiques changent, nous mettrons à jour cette page et la date ci-dessus.`,
+    "s7.h": `7. Contact`,
+    "s7.p": `Des questions ? Contactez-nous à <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "footer.home": `Accueil`, "footer.support": `Assistance`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — Toutes les données restent sur votre appareil.`,
+    "footer.copy": `© 2026 Cardugo. Tous droits réservés.`,
+  },
+  de: {
+    "doc.title": `Datenschutzerklärung — Cardugo`,
+    "nav.back": `Zurück zur Hauptseite`,
+    "page.label": `Rechtliches`, "page.title": `Datenschutzerklärung`,
+    "page.effective": `Gültig ab: 9. Juni 2026 · Zuletzt aktualisiert: 9. Juni 2026`,
+    "summary.h": `Kurz gesagt`,
+    "summary.1": `Cardugo fragt außer Face ID keine Berechtigungen ab – und das nur, wenn Sie es aktivieren.`,
+    "summary.2": `Es hat keinen Netzwerkzugriff und sendet Ihre Daten daher nie irgendwohin.`,
+    "summary.3": `Keine Analyse, keine Tracker, keine Absturzberichte, keine Werbe-SDKs.`,
+    "summary.4": `Alles, was Sie eingeben, bleibt auf Ihrem Gerät, verschlüsselt mit AES-256.`,
+    "summary.5": `Keine Konten, keine Server, keine Datenbanken – nichts, was angegriffen werden kann.`,
+    "s1.h": `1. Wer wir sind`,
+    "s1.p": `Cardugo ist eine iOS-App eines unabhängigen Entwicklers. Fragen zu dieser Erklärung? Schreiben Sie an <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "s2.h": `2. Was Cardugo speichert – und wo`,
+    "s2.p": `Alles, was Sie eingeben, wird nur auf Ihrem Gerät gespeichert und nie irgendwohin übertragen.`,
+    "th.data": `Daten`, "th.where": `Speicherort`, "th.enc": `Verschlüsselt`,
+    "row1.data": `Kartennummer, CVV, Ablaufdatum, Karteninhaber, PIN, Notizen, Bankleitzahl & Kontonummer`,
+    "row1.enc": `Ja — AES-256-GCM`,
+    "row2.data": `Spitzname, Bankname, letzte vier Ziffern`,
+    "row2.enc": `Nein — für die Listenanzeige`,
+    "row3.data": `App-Einstellungen (Design, Sprache, Schalter)`,
+    "row3.enc": `Nein — nicht sensibel`,
+    "row4.data": `Biometrieschlüssel (wenn Sie Face ID aktivieren)`,
+    "row4.enc": `Ja — iOS-Keychain`,
+    "row5.data": `Analyse, Nutzungsdaten, Absturzberichte`,
+    "row5.enc": `—`,
+    "row6.data": `Kamera, Fotos, Kontakte, Standort, Mikrofon`,
+    "row6.enc": `—`,
+    "badge.local": `Nur auf dem Gerät`, "badge.keychain": `Keychain`, "badge.notcollected": `Nicht erfasst`, "badge.notaccessed": `Kein Zugriff`,
+    "s3.h": `3. Keine Berechtigungen, kein Netzwerk, keine Tracker`,
+    "s3.p1": `Die einzige Berechtigung, die Cardugo anfragen kann, ist Face ID – allein, um Ihre verschlüsselten Daten auf dem Gerät zu entsperren, und nur, wenn Sie es aktivieren. Es fragt weder Kamera, Fotos, Kontakte, Standort noch Mikrofon ab.`,
+    "s3.p2": `Cardugo enthält keinen Netzwerkcode: kein URLSession, keine Web-Views, kein Backend, keine Cloud-Synchronisierung. Es kann Ihre Daten nirgendwohin senden. Es hat auch keine Drittanbieter-SDKs: keine Analyse, keine Absturzberichte, keine Werbenetzwerke. Die gesamte Netzwerkerkennung, Prüfung und Banknamen-Vorschläge laufen auf dem Gerät mit in der App gebündelten Daten.`,
+    "s4.h": `4. Wie Ihre Daten geschützt werden`,
+    "s4.p": `Sensible Felder werden vor dem Speichern mit AES-256-GCM verschlüsselt. Der Schlüssel wird aus Ihrer 6-stelligen PIN mit PBKDF2-SHA256 (200.000 Iterationen) abgeleitet. Wenn Sie Face ID aktivieren, wird eine Kopie des Schlüssels im iOS-Keychain versiegelt. Vergessen Sie Ihre PIN, sind Ihre Daten nicht wiederherstellbar – es gibt keinen Zurücksetzungsweg und keine Hintertür.`,
+    "s5.h": `5. Backups, die Sie exportieren`,
+    "s5.p": `Sie können eine .cardugo-Sicherungsdatei exportieren, AES-256-verschlüsselt mit einem Passwort, das Sie beim Export wählen. Cardugo lädt Backups nie automatisch hoch – der Export erfolgt nur, wenn Sie ihn auslösen, und Sie entscheiden, wo die Datei gespeichert wird.`,
+    "s6.h": `6. Apple, Kinder & Änderungen`,
+    "s6.p": `Wenn Sie aus dem App Store laden, erfasst Apple ggf. Daten wie in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apples Datenschutzrichtlinie</a> beschrieben; das verantwortet Apple, nicht wir. Cardugo richtet sich nicht an Kinder und erfasst wissentlich von niemandem Daten. Ändern sich unsere Praktiken, aktualisieren wir diese Seite und das Datum oben.`,
+    "s7.h": `7. Kontakt`,
+    "s7.p": `Fragen? Erreichen Sie uns unter <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "footer.home": `Start`, "footer.support": `Support`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — Alle Daten bleiben auf Ihrem Gerät.`,
+    "footer.copy": `© 2026 Cardugo. Alle Rechte vorbehalten.`,
+  },
+  zh: {
+    "doc.title": `隐私政策 — Cardugo`,
+    "nav.back": `返回主页`,
+    "page.label": `法律`, "page.title": `隐私政策`,
+    "page.effective": `生效日期：2026 年 6 月 9 日 · 最后更新：2026 年 6 月 9 日`,
+    "summary.h": `简要说明`,
+    "summary.1": `除 Face ID 外，Cardugo 不请求任何权限，而且仅在你启用时。`,
+    "summary.2": `它没有网络访问，因此绝不会把你的数据发送到任何地方。`,
+    "summary.3": `没有分析、没有追踪器、没有崩溃报告、没有广告 SDK。`,
+    "summary.4": `你输入的一切都保留在你的设备上，并以 AES-256 加密。`,
+    "summary.5": `没有账户、没有服务器、没有数据库——没有任何可被攻破的东西。`,
+    "s1.h": `1. 我们是谁`,
+    "s1.p": `Cardugo 是一款由独立开发者开发的 iOS 应用。对本政策有疑问？请发邮件至 <a href="mailto:0@hugohu.top">0@hugohu.top</a>。`,
+    "s2.h": `2. Cardugo 存储什么，以及存在哪里`,
+    "s2.p": `你输入的一切只存储在你的设备上，绝不会传输到任何地方。`,
+    "th.data": `数据`, "th.where": `存储位置`, "th.enc": `是否加密`,
+    "row1.data": `卡号、CVV、有效期、持卡人姓名、PIN、备注、路由号与账号`,
+    "row1.enc": `是 — AES-256-GCM`,
+    "row2.data": `昵称、银行名称、后四位数字`,
+    "row2.enc": `否 — 用于列表显示`,
+    "row3.data": `应用设置（主题、语言、开关）`,
+    "row3.enc": `否 — 非敏感信息`,
+    "row4.data": `生物识别密钥（如果你启用 Face ID）`,
+    "row4.enc": `是 — iOS 钥匙串`,
+    "row5.data": `分析、使用数据、崩溃报告`,
+    "row5.enc": `不适用`,
+    "row6.data": `相机、照片、通讯录、定位、麦克风`,
+    "row6.enc": `不适用`,
+    "badge.local": `仅在设备上`, "badge.keychain": `钥匙串`, "badge.notcollected": `不收集`, "badge.notaccessed": `不访问`,
+    "s3.h": `3. 无权限、无网络、无追踪器`,
+    "s3.p1": `Cardugo 唯一可能请求的权限是 Face ID，仅用于在设备上解锁你的加密数据，而且仅在你启用时。它不会请求相机、照片、通讯录、定位或麦克风。`,
+    "s3.p2": `Cardugo 不含任何网络代码：没有 URLSession、没有网页视图、没有后端、没有云同步。它无法把你的数据发送到任何地方。它也没有任何第三方 SDK：没有分析、没有崩溃报告、没有广告网络。所有卡组织识别、校验和银行名称建议都在设备上、依靠应用内置的数据运行。`,
+    "s4.h": `4. 你的数据如何受到保护`,
+    "s4.p": `敏感字段在写入存储前以 AES-256-GCM 加密。密钥通过 PBKDF2-SHA256（200,000 次迭代）从你的 6 位 PIN 派生。如果你启用 Face ID，密钥的一份副本会封存在 iOS 钥匙串中。如果你忘记 PIN，你的数据将无法恢复——没有重置途径，也没有后门。`,
+    "s5.h": `5. 你导出的备份`,
+    "s5.p": `你可以导出 .cardugo 备份文件，它以 AES-256 加密，并由你在导出时设定的密码保护。Cardugo 绝不会自动上传备份——导出仅在你触发时发生，且由你决定文件存放在哪里。`,
+    "s6.h": `6. Apple、儿童与变更`,
+    "s6.p": `当你从 App Store 下载时，Apple 可能会按其<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">隐私政策</a>所述收集数据；这由 Apple 处理，而非我们。Cardugo 并非面向儿童，也不会有意收集任何人的数据。若我们的做法有所变更，我们会更新本页面及上方日期。`,
+    "s7.h": `7. 联系我们`,
+    "s7.p": `有疑问？请通过 <a href="mailto:0@hugohu.top">0@hugohu.top</a> 联系我们。`,
+    "footer.home": `首页`, "footer.support": `支持`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — 所有数据都保留在你的设备上。`,
+    "footer.copy": `© 2026 Cardugo。保留所有权利。`,
+  },
+  ja: {
+    "doc.title": `プライバシーポリシー — Cardugo`,
+    "nav.back": `メインページに戻る`,
+    "page.label": `法的情報`, "page.title": `プライバシーポリシー`,
+    "page.effective": `発効日：2026 年 6 月 9 日 · 最終更新：2026 年 6 月 9 日`,
+    "summary.h": `概要`,
+    "summary.1": `Cardugo は Face ID 以外の権限を一切要求しません。しかも有効にした場合に限ります。`,
+    "summary.2": `ネットワークアクセスがないため、あなたのデータをどこにも送信しません。`,
+    "summary.3": `分析も、トラッカーも、クラッシュレポートも、広告 SDK もありません。`,
+    "summary.4": `入力した内容はすべて端末内にとどまり、AES-256 で暗号化されます。`,
+    "summary.5": `アカウントも、サーバーも、データベースもなし——侵害される対象がありません。`,
+    "s1.h": `1. 運営者について`,
+    "s1.p": `Cardugo は独立した開発者による iOS アプリです。本ポリシーに関するご質問は <a href="mailto:0@hugohu.top">0@hugohu.top</a> までご連絡ください。`,
+    "s2.h": `2. Cardugo が保存するものと保存場所`,
+    "s2.p": `入力した内容はすべて端末内にのみ保存され、どこにも送信されません。`,
+    "th.data": `データ`, "th.where": `保存場所`, "th.enc": `暗号化`,
+    "row1.data": `カード番号、CVV、有効期限、名義、PIN、メモ、ルーティング番号・口座番号`,
+    "row1.enc": `はい — AES-256-GCM`,
+    "row2.data": `ニックネーム、銀行名、下 4 桁`,
+    "row2.enc": `いいえ — 一覧表示に使用`,
+    "row3.data": `アプリ設定（テーマ、言語、切り替え）`,
+    "row3.enc": `いいえ — 機微ではない`,
+    "row4.data": `生体認証鍵（Face ID を有効にした場合）`,
+    "row4.enc": `はい — iOS キーチェーン`,
+    "row5.data": `分析、利用データ、クラッシュレポート`,
+    "row5.enc": `該当なし`,
+    "row6.data": `カメラ、写真、連絡先、位置情報、マイク`,
+    "row6.enc": `該当なし`,
+    "badge.local": `端末内のみ`, "badge.keychain": `キーチェーン`, "badge.notcollected": `収集しない`, "badge.notaccessed": `アクセスしない`,
+    "s3.h": `3. 権限なし、ネットワークなし、トラッカーなし`,
+    "s3.p1": `Cardugo が要求しうる唯一の権限は Face ID で、端末上で暗号化データをロック解除するためだけに、しかも有効にした場合に限り使われます。カメラ、写真、連絡先、位置情報、マイクは要求しません。`,
+    "s3.p2": `Cardugo にはネットワークコードがありません。URLSession も、Web ビューも、バックエンドも、クラウド同期もありません。あなたのデータをどこにも送信できません。サードパーティ SDK もありません。分析も、クラッシュレポートも、広告ネットワークもなし。カードブランドの判別、検証、銀行名の提案はすべて、アプリに同梱されたデータを使って端末上で動作します。`,
+    "s4.h": `4. データの保護方法`,
+    "s4.p": `機密フィールドは保存前に AES-256-GCM で暗号化されます。鍵は 6 桁の PIN から PBKDF2-SHA256（200,000 回の反復）で導出されます。Face ID を有効にすると、鍵のコピーが iOS キーチェーンに封印されます。PIN を忘れるとデータは復元できません。リセット手段もバックドアもありません。`,
+    "s5.h": `5. ご自身で書き出すバックアップ`,
+    "s5.p": `.cardugo バックアップファイルを書き出せます。AES-256 で暗号化され、書き出し時に選んだパスワードで保護されます。Cardugo がバックアップを自動アップロードすることはありません。書き出しはあなたが実行したときのみ行われ、保存場所もあなたが決めます。`,
+    "s6.h": `6. Apple・子ども・変更について`,
+    "s6.p": `App Store からダウンロードする際、Apple は <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple のプライバシーポリシー</a>に記載のとおりデータを収集する場合があります。これは Apple が扱うものであり、当方ではありません。Cardugo は子ども向けではなく、誰からも意図的にデータを収集しません。方針を変更する場合は、本ページと上記の日付を更新します。`,
+    "s7.h": `7. お問い合わせ`,
+    "s7.p": `ご質問は <a href="mailto:0@hugohu.top">0@hugohu.top</a> までどうぞ。`,
+    "footer.home": `ホーム`, "footer.support": `サポート`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — すべてのデータは端末内にとどまります。`,
+    "footer.copy": `© 2026 Cardugo. All rights reserved.`,
+  },
+  pt: {
+    "doc.title": `Política de Privacidade — Cardugo`,
+    "nav.back": `Voltar à página principal`,
+    "page.label": `Jurídico`, "page.title": `Política de Privacidade`,
+    "page.effective": `Data de vigência: 9 de junho de 2026 · Última atualização: 9 de junho de 2026`,
+    "summary.h": `Em resumo`,
+    "summary.1": `O Cardugo não pede nenhuma permissão além do Face ID, e só se você ativá-lo.`,
+    "summary.2": `Ele não tem acesso à rede, então nunca envia seus dados a lugar nenhum.`,
+    "summary.3": `Sem análises, sem rastreadores, sem relatórios de falhas, sem SDKs de publicidade.`,
+    "summary.4": `Tudo o que você insere permanece no seu dispositivo, criptografado com AES-256.`,
+    "summary.5": `Sem contas, sem servidores, sem bancos de dados — nada a ser violado.`,
+    "s1.h": `1. Quem somos`,
+    "s1.p": `O Cardugo é um app iOS de um desenvolvedor independente. Dúvidas sobre esta política? Escreva para <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "s2.h": `2. O que o Cardugo armazena — e onde`,
+    "s2.p": `Tudo o que você insere é armazenado apenas no seu dispositivo e nunca é transmitido a lugar nenhum.`,
+    "th.data": `Dado`, "th.where": `Onde é armazenado`, "th.enc": `Criptografado`,
+    "row1.data": `Número do cartão, CVV, validade, titular, PIN, notas, números de roteamento e de conta`,
+    "row1.enc": `Sim — AES-256-GCM`,
+    "row2.data": `Apelido, nome do banco, quatro últimos dígitos`,
+    "row2.enc": `Não — usado para exibir a lista`,
+    "row3.data": `Ajustes do app (tema, idioma, opções)`,
+    "row3.enc": `Não — não sensível`,
+    "row4.data": `Chave biométrica (se você ativar o Face ID)`,
+    "row4.enc": `Sim — Keychain do iOS`,
+    "row5.data": `Análises, dados de uso, relatórios de falhas`,
+    "row5.enc": `N/D`,
+    "row6.data": `Câmera, fotos, contatos, localização, microfone`,
+    "row6.enc": `N/D`,
+    "badge.local": `Apenas no dispositivo`, "badge.keychain": `Keychain`, "badge.notcollected": `Não coletado`, "badge.notaccessed": `Sem acesso`,
+    "s3.h": `3. Sem permissões, sem rede, sem rastreadores`,
+    "s3.p1": `A única permissão que o Cardugo pode solicitar é o Face ID, usada apenas para desbloquear seus dados criptografados no dispositivo, e só se você ativá-lo. Ele não pede câmera, fotos, contatos, localização ou microfone.`,
+    "s3.p2": `O Cardugo não contém código de rede: sem URLSession, sem visualizações web, sem servidor, sem sincronização na nuvem. Ele não pode enviar seus dados a lugar nenhum. Também não tem SDKs de terceiros: sem análises, sem relatórios de falhas, sem redes de anúncios. Toda a detecção de bandeira, validação e sugestão de bancos é executada no dispositivo com dados embutidos no app.`,
+    "s4.h": `4. Como seus dados são protegidos`,
+    "s4.p": `Os campos sensíveis são criptografados com AES-256-GCM antes de serem gravados. A chave é derivada do seu PIN de 6 dígitos usando PBKDF2-SHA256 (200.000 iterações). Se você ativar o Face ID, uma cópia da chave é selada no Keychain do iOS. Se você esquecer o PIN, seus dados não podem ser recuperados — não há forma de redefinição nem porta dos fundos.`,
+    "s5.h": `5. Backups que você exporta`,
+    "s5.p": `Você pode exportar um arquivo de backup .cardugo, criptografado com AES-256 por uma senha que você escolhe ao exportar. O Cardugo nunca envia backups automaticamente — a exportação só acontece quando você a aciona, e você decide onde o arquivo é armazenado.`,
+    "s6.h": `6. Apple, crianças e alterações`,
+    "s6.p": `Ao baixar pela App Store, a Apple pode coletar dados conforme descrito na <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidade da Apple</a>; isso é tratado pela Apple, não por nós. O Cardugo não é direcionado a crianças e não coleta dados de ninguém conscientemente. Se nossas práticas mudarem, atualizaremos esta página e a data acima.`,
+    "s7.h": `7. Contato`,
+    "s7.p": `Dúvidas? Fale com a gente em <a href="mailto:0@hugohu.top">0@hugohu.top</a>.`,
+    "footer.home": `Início`, "footer.support": `Suporte`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — Todos os dados permanecem no seu dispositivo.`,
+    "footer.copy": `© 2026 Cardugo. Todos os direitos reservados.`,
+  },
+  ko: {
+    "doc.title": `개인정보 처리방침 — Cardugo`,
+    "nav.back": `메인 페이지로 돌아가기`,
+    "page.label": `법적 고지`, "page.title": `개인정보 처리방침`,
+    "page.effective": `시행일: 2026년 6월 9일 · 최종 업데이트: 2026년 6월 9일`,
+    "summary.h": `요약`,
+    "summary.1": `Cardugo는 Face ID 외에 어떤 권한도 요청하지 않으며, 그것도 직접 켰을 때만 사용합니다.`,
+    "summary.2": `네트워크 접근이 없어 당신의 데이터를 어디로도 보내지 않습니다.`,
+    "summary.3": `분석도, 추적기도, 충돌 보고도, 광고 SDK도 없습니다.`,
+    "summary.4": `당신이 입력한 모든 것은 기기에 남아 AES-256으로 암호화됩니다.`,
+    "summary.5": `계정도, 서버도, 데이터베이스도 없습니다 — 침해될 것이 없습니다.`,
+    "s1.h": `1. 운영자 정보`,
+    "s1.p": `Cardugo는 독립 개발자가 만든 iOS 앱입니다. 본 방침에 대한 문의는 <a href="mailto:0@hugohu.top">0@hugohu.top</a>으로 보내 주세요.`,
+    "s2.h": `2. Cardugo가 저장하는 것과 저장 위치`,
+    "s2.p": `당신이 입력한 모든 것은 기기에만 저장되며 어디로도 전송되지 않습니다.`,
+    "th.data": `데이터`, "th.where": `저장 위치`, "th.enc": `암호화`,
+    "row1.data": `카드 번호, CVV, 유효기간, 소유자명, PIN, 메모, 라우팅 번호 및 계좌번호`,
+    "row1.enc": `예 — AES-256-GCM`,
+    "row2.data": `별칭, 은행명, 마지막 네 자리`,
+    "row2.enc": `아니요 — 목록 표시에 사용`,
+    "row3.data": `앱 설정(테마, 언어, 토글)`,
+    "row3.enc": `아니요 — 민감하지 않음`,
+    "row4.data": `생체 인증 키(Face ID를 켠 경우)`,
+    "row4.enc": `예 — iOS 키체인`,
+    "row5.data": `분석, 사용 데이터, 충돌 보고`,
+    "row5.enc": `해당 없음`,
+    "row6.data": `카메라, 사진, 연락처, 위치, 마이크`,
+    "row6.enc": `해당 없음`,
+    "badge.local": `기기에만`, "badge.keychain": `키체인`, "badge.notcollected": `수집하지 않음`, "badge.notaccessed": `접근하지 않음`,
+    "s3.h": `3. 권한 없음, 네트워크 없음, 추적기 없음`,
+    "s3.p1": `Cardugo가 요청할 수 있는 유일한 권한은 Face ID이며, 기기에서 암호화된 데이터를 잠금 해제하는 용도로만, 그것도 직접 켰을 때만 사용됩니다. 카메라, 사진, 연락처, 위치, 마이크는 요청하지 않습니다.`,
+    "s3.p2": `Cardugo에는 네트워크 코드가 없습니다. URLSession도, 웹 뷰도, 백엔드도, 클라우드 동기화도 없습니다. 당신의 데이터를 어디로도 보낼 수 없습니다. 서드파티 SDK도 없습니다. 분석도, 충돌 보고도, 광고 네트워크도 없습니다. 모든 카드 브랜드 인식, 검증, 은행명 제안은 앱에 내장된 데이터로 기기에서 동작합니다.`,
+    "s4.h": `4. 데이터 보호 방식`,
+    "s4.p": `민감한 필드는 저장되기 전에 AES-256-GCM으로 암호화됩니다. 키는 6자리 PIN에서 PBKDF2-SHA256(200,000회 반복)으로 파생됩니다. Face ID를 켜면 키의 사본이 iOS 키체인에 봉인됩니다. PIN을 잊으면 데이터는 복구할 수 없습니다 — 재설정 경로도, 백도어도 없습니다.`,
+    "s5.h": `5. 직접 내보내는 백업`,
+    "s5.p": `.cardugo 백업 파일을 내보낼 수 있습니다. AES-256으로 암호화되며 내보낼 때 직접 정한 비밀번호로 보호됩니다. Cardugo는 백업을 자동으로 업로드하지 않습니다 — 내보내기는 당신이 실행할 때만 일어나며, 파일을 어디에 둘지도 당신이 정합니다.`,
+    "s6.h": `6. Apple, 아동, 변경 사항`,
+    "s6.p": `App Store에서 다운로드할 때 Apple은 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보 정책</a>에 설명된 대로 데이터를 수집할 수 있습니다. 이는 우리가 아니라 Apple이 처리합니다. Cardugo는 아동을 대상으로 하지 않으며 누구의 데이터도 의도적으로 수집하지 않습니다. 방침이 바뀌면 이 페이지와 위의 날짜를 업데이트합니다.`,
+    "s7.h": `7. 문의`,
+    "s7.p": `궁금한 점이 있으신가요? <a href="mailto:0@hugohu.top">0@hugohu.top</a>으로 연락 주세요.`,
+    "footer.home": `홈`, "footer.support": `지원`, "footer.appstore": `App Store`,
+    "footer.tagline": `Cardugo — 모든 데이터는 기기 안에 머뭅니다.`,
+    "footer.copy": `© 2026 Cardugo. All rights reserved.`,
+  },
+};
+</script>
+<script src="i18n.js"></script>
+
+</body>
+</html>
