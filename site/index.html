@@ -319,7 +319,6 @@
       border-radius: var(--radius);
       padding: 26px 24px;
     }
-    .pillar-card .pillar-icon { font-size: 20px; margin-bottom: 12px; display: block; }
     .pillar-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
     .pillar-card p { font-size: 14px; color: var(--muted); }
 
@@ -378,7 +377,6 @@
       border-radius: var(--radius);
       padding: 24px 20px;
     }
-    .feature-card .feat-icon { font-size: 20px; display: block; margin-bottom: 12px; }
     .feature-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
     .feature-card p  { font-size: 13px; color: var(--muted); }
 
@@ -419,7 +417,7 @@
       gap: 10px;
     }
     .security-block li:last-child { border-bottom: none; }
-    .security-block li::before { content: "🔒"; font-size: 13px; flex-shrink: 0; }
+    .security-block li::before { content: "✓"; color: #60B0FF; font-weight: 700; font-size: 13px; flex-shrink: 0; }
 
     /* ── Footer ── */
     footer {
@@ -519,22 +517,18 @@
 
     <div class="pillar-grid">
       <div class="pillar-card">
-        <span class="pillar-icon">🚫</span>
         <h3 data-i18n="privacy.perm.t">No permissions requested</h3>
         <p data-i18n="privacy.perm.b">No camera, photos, contacts, or location. The only system prompt you may ever see is Face ID — and only if you choose to enable it.</p>
       </div>
       <div class="pillar-card">
-        <span class="pillar-icon">📡</span>
         <h3 data-i18n="privacy.net.t">No network access</h3>
         <p data-i18n="privacy.net.b">No URLSession, no web views, no backend. The app has no networking code, so it physically cannot send your data anywhere.</p>
       </div>
       <div class="pillar-card">
-        <span class="pillar-icon">👁️</span>
         <h3 data-i18n="privacy.track.t">No trackers or analytics</h3>
         <p data-i18n="privacy.track.b">Zero third-party SDKs. No analytics, no crash reporters, no ad networks. Nothing watches what you do.</p>
       </div>
       <div class="pillar-card">
-        <span class="pillar-icon">🔐</span>
         <h3 data-i18n="privacy.faceid.t">Face ID, on-device only</h3>
         <p data-i18n="privacy.faceid.b">Cards are encrypted with AES-256 and unlocked only by your PIN or Face ID. Your biometrics never leave the device.</p>
       </div>
@@ -562,32 +556,26 @@
 
     <div class="feature-grid" style="margin-bottom:28px;">
       <div class="feature-card">
-        <span class="feat-icon">🌍</span>
         <h4 data-i18n="f.lang.t">8 languages</h4>
         <p data-i18n="f.lang.b">English, Spanish, French, German, Chinese, Japanese, Portuguese, and Korean — fully localized, switchable any time, and working entirely offline.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">🎨</span>
         <h4 data-i18n="f.design.t">Design your own cards</h4>
         <p data-i18n="f.design.b">Make it yours with custom layouts, fonts, patterns, chips, and gradients — or pick from 115 real bank presets and 10 ready-made gradients.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">⚡</span>
         <h4 data-i18n="f.detect.t">Automatic network detection</h4>
         <p data-i18n="f.detect.b">The network logo appears the moment you start typing, as Cardugo recognizes the card's BIN across 12 payment networks.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">💡</span>
         <h4 data-i18n="f.suggest.t">Smart name suggestions</h4>
         <p data-i18n="f.suggest.b">Around 2,900 BIN mappings suggest the issuing bank and card name as you type — all matched on-device.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">✨</span>
         <h4 data-i18n="f.motion.t">Smooth, elegant motion</h4>
         <p data-i18n="f.motion.b">Fluid card flips, a stacked deck that fans open, and natural drag-to-reorder gestures — tuned springs at a steady 60 fps.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">💳</span>
         <h4 data-i18n="f.any.t">Any card or account</h4>
         <p data-i18n="f.any.b">Credit, debit, prepaid, and bank accounts with routing and account numbers, plus up to 500 characters of encrypted notes per card.</p>
       </div>
@@ -648,12 +636,10 @@
     <h2 data-i18n="backup.title">Backup &amp; restore</h2>
     <div class="feature-grid">
       <div class="feature-card">
-        <span class="feat-icon">📦</span>
         <h4 data-i18n="backup.file.t">Encrypted .cardugo file</h4>
         <p data-i18n="backup.file.b">Export an AES-256 encrypted backup protected by a password you choose — separate from your app PIN. Share it via Files, AirDrop, or any cloud you trust.</p>
       </div>
       <div class="feature-card">
-        <span class="feat-icon">🔁</span>
         <h4 data-i18n="backup.import.t">Non-destructive import</h4>
         <p data-i18n="backup.import.b">Importing merges cards into your existing collection without wiping anything. All decryption happens on-device, with no server involved.</p>
       </div>
